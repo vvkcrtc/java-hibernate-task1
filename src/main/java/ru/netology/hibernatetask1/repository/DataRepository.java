@@ -32,12 +32,13 @@ import java.util.List;
 
     public List<String> getPersonsByCity(String city) {
 
-        String sql = "select * from Person where city_of_living=:city";
-        var query = entityManager.createQuery(sql);
-        query.setParameter("city",city);
-        var persons = query.getResultList();
-
-        return persons;
+//        String sql = "select * from Person where city_of_living=:city";
+//        var query = entityManager.createQuery(sql);
+//        query.setParameter("city",city);
+//        var persons = query.getResultList();
+//
+//        return persons;
+        return null;
 
     }
 

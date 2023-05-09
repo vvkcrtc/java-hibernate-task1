@@ -4,12 +4,14 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.NamedQuery;
 import org.springframework.data.annotation.Id;
 
 
 
-@Table(name="persons")
+//@Table(name="persons")
+@NoArgsConstructor
 @Entity
 public class Person {
     @Id
@@ -19,9 +21,9 @@ public class Person {
     private String city_of_living;
 
 
-    public Person() {
-
-    }
+//    public Person() {
+//
+//    }
 
     public Person(NameId id, String phone_number, String city_of_living) {
         this.id = id;

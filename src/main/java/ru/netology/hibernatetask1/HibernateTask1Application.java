@@ -11,25 +11,3 @@ public class HibernateTask1Application {
     }
 
 }
-//public class HibernateTask1Application implements CommandLineRunner {
-//    @PersistenceContext
-//    EntityManager entityManager;
-//    public static void main(String[] args) {
-//
-//        SpringApplication app = new SpringApplication(CommandLineRunner.class);
-//        app.run(args);
-//    }
-//    @Transactional
-//    @Override
-//    public void run(String... args) {
-////          List<City> cities = new ArrayList<>();
-////        cities.add(City.builder().name("Moscow").build());
-////        cities.add(City.builder().name("Orel").build());
-////        cities.add(City.builder().name("Novokuznetsk").build());
-//        //entityManager.persist(cities.get(1));
-//        //cities.forEach(city -> entityManager.persist(city));
-//
-//    }
-//
-//
-//}
