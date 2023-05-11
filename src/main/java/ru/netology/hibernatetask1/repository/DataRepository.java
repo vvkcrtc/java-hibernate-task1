@@ -1,20 +1,22 @@
 package ru.netology.hibernatetask1.repository;
-import javax.persistence.PersistenceContext;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
+//import javax.persistence.PersistenceContext;
+//import javax.persistence.EntityManager;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Repository
  public class DataRepository  {
     @PersistenceContext
     EntityManager entityManager;
 
-//    @Transactional
+    @Transactional
     public void add() {
 
         List<Person> persons = new ArrayList<>();
@@ -22,7 +24,10 @@ import java.util.List;
         persons.add(new Person(new NameId("name2","surname2",22),"2222222","Moscow"));
         persons.add(new Person(new NameId("name3","surname3",22),"3333333","Moscow"));
 
-        persons.forEach(person -> entityManager.persist(person));
+        for(Person p : persons) {
+            entityManager.persist(p);
+        }
+        //persons.forEach(person -> entityManager.persist(person));
     }
     public DataRepository() {
 

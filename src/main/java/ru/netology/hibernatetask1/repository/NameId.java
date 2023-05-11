@@ -12,14 +12,12 @@ import java.util.Objects;
 @NoArgsConstructor
 public class NameId implements Serializable {
     @Column(nullable = false)
-    private String name;
-    private String surname;
-    @Column(nullable = false)
     private int age;
+    @Column(nullable = false)
+    private String name;
 
-//    public NameId() {
-//
-//    }
+    private String surname;
+
 
     public NameId(String name, String surname, int age) {
         this.name = name;

@@ -1,33 +1,44 @@
 package ru.netology.hibernatetask1.repository;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.NamedQuery;
-import org.springframework.data.annotation.Id;
 
 
-
-//@Table(name="persons")
-@NoArgsConstructor
 @Entity
+@Data
+@NoArgsConstructor
+@Builder
 public class Person {
-    @Id
+
     @EmbeddedId
     private NameId id;
+
     private String phone_number;
-    private String city_of_living;
+    @Column(name = "city_of_living")
+    private String city;
 
 
-//    public Person() {
-//
-//    }
 
-    public Person(NameId id, String phone_number, String city_of_living) {
+
+    public Person(NameId id, String phone_number, String city) {
         this.id = id;
         this.phone_number = phone_number;
-        this.city_of_living = city_of_living;
+        this.city = city;
+    }
+
+    public String getName() {
+        return id.getName();
+    }
+
+    public String getSurname() {
+        return id.getSurname();
+    }
+    public int getAge() {
+        return id.getAge();
     }
 }
