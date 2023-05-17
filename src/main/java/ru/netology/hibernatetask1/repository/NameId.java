@@ -50,6 +50,6 @@ public class NameId implements Serializable {
     }
 
     public int hashCode() {
-        return Objects.hash(getName(), getSurname(),getAge());
+        return Objects.hash(getName(), getSurname(), getAge());
     }
 }

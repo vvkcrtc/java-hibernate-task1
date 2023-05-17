@@ -2,9 +2,8 @@ package ru.netology.hibernatetask1.service;
 
 import org.springframework.stereotype.Service;
 import ru.netology.hibernatetask1.repository.DataRepository;
+import ru.netology.hibernatetask1.repository.Person;
 
-
-import java.sql.SQLException;
 import java.util.List;
 
 @Service
@@ -15,8 +14,8 @@ public class DataService {
         this.repository = repository;
     }
 
-    public List<String> getOrders(String city) throws SQLException {
-        System.out.println("Customer : " + city);
+    public List<Person> getPersonsByCity(String city) {
+
         return repository.getPersonsByCity(city);
 
     }

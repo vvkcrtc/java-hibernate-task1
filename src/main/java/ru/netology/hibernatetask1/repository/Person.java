@@ -23,8 +23,6 @@ public class Person {
     private String city;
 
 
-
-
     public Person(NameId id, String phone_number, String city) {
         this.id = id;
         this.phone_number = phone_number;
@@ -40,5 +38,9 @@ public class Person {
     }
     public int getAge() {
         return id.getAge();
+    }
+
+    public NameId getId() {
+        return id;
     }
 }
